@@ -1,0 +1,45 @@
+// base by fungleo
+html {font-size: 13px;}
+body {
+  color: $c55;line-height: 1;
+  min-width: 1000px;
+  min-height: 500px;
+}
+body,button, input, select, textarea {
+  font-family: "Helvetica Neue",Helvetica,tahoma,"PingFang SC","Hiragino Sans GB","Microsoft YaHei","\5FAE\8F6F\96C5\9ED1",Arial,sans-serif;
+}
+
+.gehang {width: 10px;height: 10px;overflow: hidden;text-indent: -9999px;clear: both;display: block;}
+.block {display: block;}
+.none {display:none}
+.clear {clear: both;}
+.mb20 {margin-bottom: 20px;}
+.mt20 {margin-top: 20px;}
+.mt10 {margin-top: 10px;}
+.mt5 {margin-top: 5px;}
+.pt0 {padding-top: 0 !important;}
+.fl {float: left;}
+.fr {float: right;}
+.tl {text-align: left;}
+.tr {text-align: right;}
+.tc {text-align: center;}
+.w300 {width: 300px;}
+.w600 {width: 600px;}
+.w800 {width: 800px;}
+.cf{
+	zoom:1;
+	&:before,&:after {content:"";display:table;}
+	&:after {clear:both;}
+}
+
+
+// chrome scrollbar
+::-webkit-scrollbar {width: 8px;height: 10px;}
+::-webkit-scrollbar-thumb {min-height: 20px;background: rgba($cff,0.5);}
+::-webkit-scrollbar-track-piece{background: rgba($black,0.5);}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button{
+    -webkit-appearance: none !important;
+    margin: 0;
+}

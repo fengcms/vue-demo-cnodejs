@@ -1,0 +1,79 @@
+
+// mixins
+
+// for link
+@mixin dz($time:0.25s){
+    -webkit-transition: all $time ease-in-out;
+    transition: all $time ease-in-out;
+}
+// text shadow
+@mixin ts($s1:1px,$s2:1px,$color:$cff){
+	text-shadow:
+	$s1 $s1 $s2 $color,
+	-$s1 $s1 $s2 $color,
+	$s1 (-$s1) $s2 $color,
+	-$s1 (-$s1) $s2 $color;
+}
+//
+@mixin jb($color1:#000,$color2:#fff,$deg:0){
+	background-image:-webkit-linear-gradient($deg+deg, $color2, $color1);
+	background-image:linear-gradient($deg+deg, $color2, $color1);
+}
+// rotate
+@mixin xz($deg:360){
+    -webkit-transform:rotate($deg+deg);
+	transform:rotate($deg+deg);
+}
+// rotate and zoom
+@mixin xzfd($deg:360,$s1:1.2){
+	-webkit-transform:rotate($deg+deg) scale($s1);
+	transform:rotate($deg+deg) scale($s1);
+}
+// zoom
+@mixin fd($s1:1.2){
+	-webkit-transform:scale($s1);
+	transform:scale($s1);
+}
+// move
+@mixin yd($s1:0,$s2:0){
+	-webkit-transform:translate($s1,$s2);
+	transform:translate($s1,$s2);
+}
+// no select
+@mixin ns{
+	-webkit-touch-callout: none;
+	-webkit-user-select: none;
+	-khtml-user-select: none;
+	-moz-user-select: none;
+	-ms-user-select: none;
+	user-select: none;
+}
+// one line text for ...
+@mixin oneline($s1) {
+	overflow: hidden;
+	line-height: $s1;
+	height: $s1;
+	white-space: nowrap;
+	text-overflow: ellipsis;
+}
+// calc
+@mixin calc($property, $expression) {
+	#{$property}: -webkit-calc(#{$expression});
+	#{$property}: calc(#{$expression});
+}
+//
+@mixin hlh($s1) {
+	height: $s1;
+	line-height: $s1;
+	overflow: hidden;
+}
+// 格栅布局
+
+@mixin column($width,$gap){
+	-webkit-column-width:$width;
+	-moz-column-width:$width;
+	column-width:$width;
+	-webkit-column-gap:$gap;
+	-moz-column-gap:$gap;
+	column-gap:$gap;
+}

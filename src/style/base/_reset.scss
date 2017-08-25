@@ -1,0 +1,32 @@
+
+// Setting parameters by fungleo
+
+$BaseC:$c55;
+
+// reset by fungleo date 2015.08.27
+
+@charset "UTF-8";
+
+
+body,ul,ol,dl,dd,h1,h2,h3,h4,h5,h6,pre,form,fieldset,legend,input,button,textarea,p,blockquote,table,th,td,menu{margin:0;padding:0;resize: none;}
+table{border-collapse:collapse;border-spacing:0;}
+ul,ol,menu{list-style:none;text-align: left;}
+fieldset,img{border:none}
+// img,object,select,input,textarea,button{vertical-align:middle;box-sizing:content-box;}
+input,textarea,select,address,caption,cite,code,dfn,em,i,b,strong,small,th,var,abbr,button,u,s,del{
+	font-style:normal;text-decoration: none;
+}
+article,aside,footer,header,hgroup,nav,section,figure,figcaption {display: block;}
+code, kbd, pre, samp, tt { font-family: Consolas,"Courier New", Courier, monospace;}
+address, cite, dfn, em, var,i {font-style: normal;}
+blockquote, q {quotes: none;}
+blockquote:before, blockquote:after,q:before, q:after {content:"";content: none;}
+a {
+    text-decoration:none;cursor: pointer;color: $c55;
+    &:link,&:visited, &:active{}
+    &:hover, &:focus {outline:none;color: $cf60;}
+    &,* {cursor: pointer;}
+}
+
+
+abbr[title], acronym[title] {border-bottom: 1px dotted;cursor: help;}
