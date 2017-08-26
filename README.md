@@ -1,4 +1,4 @@
-#Vue2+VueRouter2+Webpack+Axios 构建项目实战2017重制版
+# Vue2+VueRouter2+Webpack+Axios 构建项目实战2017重制版
 
 2016年，我写了一系列的 VUE 入门教程，当时写这一系列博文的时候，我也只是一个菜鸟，甚至在写的过程中关闭了代码审查，否则通不过校验。
 
