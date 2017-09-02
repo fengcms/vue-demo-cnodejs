@@ -21,6 +21,7 @@
 9. [Vue2+VueRouter2+Webpack+Axios 构建项目实战2017重制版（九）再把内容页面渲染出来](http://blog.csdn.net/fungleo/article/details/77604490)
 10. [Vue2+VueRouter2+Webpack+Axios 构建项目实战2017重制版（十）打包项目并发布到子目录](http://blog.csdn.net/fungleo/article/details/77606216)
 11. [Vue2+VueRouter2+Webpack+Axios 构建项目实战2017重制版（十一）阶段性小结](http://blog.csdn.net/fungleo/article/details/77606321)
+12. [Vue2+VueRouter2+Webpack+Axios 构建项目实战2017重制版（十二）打包项目图片等资源的处理](http://blog.csdn.net/fungleo/article/details/77799057)
 
 ## Build Setup
 

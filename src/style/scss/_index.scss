@@ -1,0 +1,32 @@
+
+.header {
+  background: $gray;line-height: 2;color: $black;
+}
+
+
+.img_test {
+  text-align: center;background: $cf0;padding: 10px;
+  img {width: 100px;display: block;margin: 0 auto 5px;}
+  &:after {
+    content: "我爱刘亦菲"; color: $red;
+  }
+}
+
+.article_list {
+  background-image: url('../static/image/lyf.jpg');
+  background-position: right top;
+  background-repeat: no-repeat;
+  background-size: 200px auto;
+  ul {
+    padding:20px 220px 20px 20px;
+  }
+  li {
+    line-height: 32px;text-indent: 10px;height: 32px;overflow: hidden;
+    &:nth-child(2n) {background: $cf9;}
+    time {float: right;color: $c99;padding: 0 10px;}
+  }
+}
+
+.copy {
+  text-align: center;color: $c99;line-height: 4;
+}

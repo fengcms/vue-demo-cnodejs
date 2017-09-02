@@ -1,6 +1,11 @@
 <template>
   <div>
     <myHeader></myHeader>
+    <!-- img test -->
+    <div class="img_test">
+      <img src="static/image/lyf.jpg" alt="刘亦菲">
+    </div>
+    <!--  -->
     <div class="article_list">
       <ul>
         <li v-for="i in list">
