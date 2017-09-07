@@ -22,6 +22,9 @@ import '../static/ue/ueditor.all.min.js'
 import '../static/ue/lang/zh-cn/zh-cn.js'
 import '../static/ue/ueditor.parse.min.js'
 
+// import 'jquery'
+import '../static/js/jquery-1.8.3.js'
+
 /* eslint-disable no-new */
 new Vue({
   el: '#app',
