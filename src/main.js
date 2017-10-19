@@ -23,7 +23,7 @@ import '../static/ue/lang/zh-cn/zh-cn.js'
 import '../static/ue/ueditor.parse.min.js'
 
 // import 'jquery'
-import '../static/js/jquery-1.8.3.js'
+// import '../static/js/jquery-3.2.1.min.js'
 
 /* eslint-disable no-new */
 new Vue({
