@@ -4,6 +4,7 @@ import Index from '@/page/index'
 import Content from '@/page/content'
 import UET from '@/page/ue_test'
 import JQ from '@/page/jq'
+import keyboard from '@/page/keyboard'
 
 Vue.use(Router)
 
@@ -21,6 +22,9 @@ export default new Router({
     }, {
       path: '/jq',
       component: JQ
+    }, {
+      path: '/keyboard',
+      component: keyboard
     }
   ]
 })

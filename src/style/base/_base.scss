@@ -36,8 +36,8 @@ body,button, input, select, textarea {
 ::-webkit-scrollbar-thumb {min-height: 20px;background: rgba($cff,0.5);}
 ::-webkit-scrollbar-track-piece{background: rgba($black,0.5);}
 
-input::-webkit-outer-spin-button,
-input::-webkit-inner-spin-button{
-    -webkit-appearance: none !important;
-    margin: 0;
-}
+// input::-webkit-outer-spin-button,
+// input::-webkit-inner-spin-button{
+//     -webkit-appearance: none !important;
+//     margin: 0;
+// }

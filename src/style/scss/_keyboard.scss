@@ -1,0 +1,45 @@
+.keyboard {
+  padding: 0 50px;
+  h1 {
+    color: $blue;line-height: 60px;
+  }
+  .keyboard_control {
+    button {
+      display: inline-block;font-size: 14px;border: 1px solid;padding: 8px;border-radius: 5px;color: $cff;
+      &.add_key {background: $green;border-color: darken($green,10%);}
+      &.remove_key {background: $red;border-color: darken($red,10%);}
+    }
+  }
+  .keyboard_edit {
+    padding: 15px;border: 1px solid $cdd;background: $cfa;margin-top: 20px;border-radius: 5px;
+    .keyboard_layout {
+      position: relative;width: 100%;min-height: 400px;
+      .key {
+        position: absolute;border-radius: 5px;background: $cdd;box-shadow: 0 0 0 1px $c55 inset;cursor: pointer;
+        &.curl {box-shadow: 0 0 0 1px $red inset;}
+        .key_hat {
+          position: absolute;top: 3px;bottom: 10px;left: 5px;right: 5px;
+          border: 1px solid $ccc;background: $cff;border-radius: 4px;
+        }
+        .text {position: absolute;left: 3px;right: 3px;height: 12px;font-size: 11px;line-height: 12px;}
+        .text_1 {top: 2px;}
+        .text_2 {top: 15px;}
+        .text_3 {top: 28px;}
+        .text_4 {top: 38px;font-size: 10px;}
+        .text_l {text-align: left;}
+        .text_m {text-align: center;}
+        .text_r {text-align: right;}
+      }
+    }
+  }
+  .keyboard_params {
+    margin-top: 20px;
+    dl {
+      display: table;width: 100%;border-bottom: 1px solid $cdd;
+      &:nth-child(2n) {background: $cfa;}
+      dt,dd {display: table-cell;vertical-align: middle;padding: 5px 0;}
+      dt {width: 100px;font-size: 14px;font-weight: bold;text-align: right;}
+      input {display: inline-block;height: 24px;line-height: 24px;padding: 0 5px;border: 1px solid $cdd;border-radius: 5px;width: 50px;}
+    }
+  }
+}
