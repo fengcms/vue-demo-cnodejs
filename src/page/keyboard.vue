@@ -81,22 +81,14 @@
 export default {
   data () {
     return {
-      key: [
-        {
-          width: 1,
-          height: 1,
-          left: 0,
-          top: 0,
-          text: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12]
-        }
-      ],
-      curlIndex: 0,
+      key: [],
+      curlIndex: null,
       curlKey: {
-        width: 1,
-        height: 1,
-        left: 0,
-        top: 0,
-        text: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12]
+        width: null,
+        height: null,
+        left: null,
+        top: null,
+        text: new Array(11)
       }
     }
   },
@@ -108,20 +100,18 @@ export default {
       return 'left:' + o.left * 56 + 'px; top:' + o.top * 56 + 'px;width: ' + o.width * 56 + 'px;height: ' + o.height * 56 + 'px;'
     },
     addKey () {
-      console.log(JSON.stringify(this.key))
       let left = null
       let top = null
-      let lastKeyIndex = this.key.length - 1
-      let lastKey = this.key[lastKeyIndex]
-      if (lastKeyIndex === -1) {
+      if (this.key.length === 0) {
         left = 0
         top = 0
       } else {
-        if (lastKey.left === 14) {
+        let lastKey = this.getLastKey()
+        if (lastKey.left === 23) {
           left = 0
           top = +lastKey.top + 1
         } else {
-          left = +lastKey.left + 1
+          left = +lastKey.left + +lastKey.width
           top = lastKey.top
         }
       }
@@ -132,20 +122,40 @@ export default {
         top: top,
         text: new Array(11)
       })
+      this.curlIndex = this.key.length - 1
+      this.curlKey = this.key[this.curlIndex]
+    },
+    getLastKey () {
+      let o = this.key.length > 0 ? this.key[0] : this.normalKey()
+      for (var i = 0; i < this.key.length; i++) {
+        let k = this.key[i]
+        if (k.top > o.top) {
+          o = k
+        } else if (k.left > o.left) {
+          o = k
+        }
+      }
+      return o
     },
     removeKey () {
-      // console.log(JSON.stringify(this.key))
       delete this.key[this.curlIndex]
-      console.log(this.curlIndex)
-      console.log(this.key.length - 1)
-      if (this.curlIndex === this.key.length - 1) { this.curlIndex -= 1 }
-      console.log(this.curlIndex)
       this.key = this.key.filter(function (n) { return n })
-      this.curlKey = this.key[this.curlIndex]
+      this.curlIndex = this.key.length - 1 < this.curlIndex ? this.key.length - 1 : this.curlIndex
+      this.curlKey = this.key.length > 0 ? this.key[this.curlIndex] : this.normalKey()
     },
     chooseCurlKey (index) {
       this.curlIndex = index
       this.curlKey = this.key[index]
+    },
+    normalKey () {
+      let o = {
+        width: null,
+        height: null,
+        left: null,
+        top: null,
+        text: new Array(11)
+      }
+      return o
     }
   },
   watch: {
