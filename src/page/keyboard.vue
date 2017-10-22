@@ -4,6 +4,12 @@
     <div class="keyboard_control">
       <button class="add_key" @click="addKey()">添加一个按键</button>
       <button class="remove_key" @click="removeKey()">删除一个按键</button>
+      <button class="clean_key" @click="cleanKey()">清空所有按键</button>
+      <button class="save_key" @click="saveKey()">保存设定</button>
+      <br>
+      <button class="key_type" :class="{'curl':keyboardType === 21}" @click="setKeyBoardType(21)">104键盘</button>
+      <button class="key_type" :class="{'curl':keyboardType === 17}" @click="setKeyBoardType(17)">84键盘</button>
+      <button class="key_type" :class="{'curl':keyboardType === 14}" @click="setKeyBoardType(14)">60键盘</button>
     </div>
     <div class="keyboard_edit">
       <div class="keyboard_layout">
@@ -83,6 +89,7 @@ export default {
     return {
       key: [],
       curlIndex: null,
+      keyboardType: 21,
       curlKey: {
         width: null,
         height: null,
@@ -94,6 +101,9 @@ export default {
   },
   created () {
     // this.getData()
+    if (localStorage.getItem('key')) {
+      this.key = JSON.parse(localStorage.getItem('key'))
+    }
   },
   methods: {
     getStyle (o) {
@@ -107,7 +117,7 @@ export default {
         top = 0
       } else {
         let lastKey = this.getLastKey()
-        if (lastKey.left === 23) {
+        if (lastKey.left >= this.keyboardType) {
           left = 0
           top = +lastKey.top + 1
         } else {
@@ -156,6 +166,28 @@ export default {
         text: new Array(11)
       }
       return o
+    },
+    cleanKey () {
+      this.key = []
+      this.curlIndex = null
+      this.curlKey = this.normalKey()
+    },
+    setKeyBoardType (w) {
+      w = +w
+      console.log(w)
+      this.keyboardType = w
+      if (w === 21) {
+        this.key = this.$utils.defaultKey(21)
+      }
+      if (w === 17) {
+        this.key = this.$utils.defaultKey(17)
+      }
+      if (w === 14) {
+        this.key = this.$utils.defaultKey(14)
+      }
+    },
+    saveKey () {
+      localStorage.setItem('key', JSON.stringify(this.key))
     }
   },
   watch: {

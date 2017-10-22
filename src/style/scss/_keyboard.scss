@@ -5,13 +5,20 @@
   }
   .keyboard_control {
     button {
-      display: inline-block;font-size: 14px;border: 1px solid;padding: 8px;border-radius: 5px;color: $cff;
+      display: inline-block;font-size: 14px;border: 1px solid;padding: 8px;border-radius: 5px;color: $cff;outline: none;cursor: pointer;
       &.add_key {background: $green;border-color: darken($green,10%);}
       &.remove_key {background: $red;border-color: darken($red,10%);}
+      &.clean_key {background: $c55;border-color: darken($c55,10%);}
+      &.save_key {background: $blue;border-color: darken($blue,10%);}
+      &.key_type {
+        padding: 4px 6px;font-size: 12px;margin-top: 5px;
+        &.curl {background: $cyan;border-color: darken($cyan,10%);}
+      }
     }
   }
   .keyboard_edit {
-    padding: 15px;border: 1px solid $cdd;background: $cfa;margin-top: 20px;border-radius: 5px;
+    padding: 15px;border: 1px solid $cdd;background: $cfa;margin-top: 20px;border-radius: 5px;width: 1264px;
+    &.key104 {width: 1264px;}
     .keyboard_layout {
       position: relative;width: 100%;min-height: 400px;
       .key {
