@@ -1,5 +1,4 @@
 // var key104 = require()
-import keyboard from './keyboard.json'
 export default {
   goodTime (str) {
     let now = new Date().getTime()
@@ -34,17 +33,5 @@ export default {
       result = '刚刚'
     }
     return result
-  },
-  defaultKey (w) {
-    w = +w
-    if (w === 21) {
-      return keyboard.key104
-    }
-    if (w === 17) {
-      return keyboard.key84
-    }
-    if (w === 14) {
-      return keyboard.key60
-    }
   }
 }

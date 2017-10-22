@@ -7,9 +7,9 @@
       <button class="clean_key" @click="cleanKey()">清空所有按键</button>
       <button class="save_key" @click="saveKey()">保存设定</button>
       <br>
-      <button class="key_type" :class="{'curl':keyboardType === 21}" @click="setKeyBoardType(21)">104键盘</button>
-      <button class="key_type" :class="{'curl':keyboardType === 17}" @click="setKeyBoardType(17)">84键盘</button>
-      <button class="key_type" :class="{'curl':keyboardType === 14}" @click="setKeyBoardType(14)">60键盘</button>
+      <button class="key_type" :class="{'curl':keyboardType === 21}" @click="setKeyBoardType(21, 'key104')">104键盘</button>
+      <button class="key_type" :class="{'curl':keyboardType === 17}" @click="setKeyBoardType(17, 'key84')">84键盘</button>
+      <button class="key_type" :class="{'curl':keyboardType === 14}" @click="setKeyBoardType(14, 'key60')">60键盘</button>
     </div>
     <div class="keyboard_edit">
       <div class="keyboard_layout">
@@ -84,6 +84,7 @@
   </div>
 </template>
 <script>
+import keyboard from '@/utils/keyboard.json'
 export default {
   data () {
     return {
@@ -172,19 +173,10 @@ export default {
       this.curlIndex = null
       this.curlKey = this.normalKey()
     },
-    setKeyBoardType (w) {
+    setKeyBoardType (w, type) {
       w = +w
-      console.log(w)
       this.keyboardType = w
-      if (w === 21) {
-        this.key = this.$utils.defaultKey(21)
-      }
-      if (w === 17) {
-        this.key = this.$utils.defaultKey(17)
-      }
-      if (w === 14) {
-        this.key = this.$utils.defaultKey(14)
-      }
+      this.key = keyboard[type]
     },
     saveKey () {
       localStorage.setItem('key', JSON.stringify(this.key))
