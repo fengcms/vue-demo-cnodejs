@@ -101,7 +101,7 @@ export default {
     }
   },
   created () {
-    // this.getData()
+    document.title = 'Keyboard Layout Editor'
     if (localStorage.getItem('key')) {
       this.key = JSON.parse(localStorage.getItem('key'))
     }
