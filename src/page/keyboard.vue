@@ -5,7 +5,7 @@
       <button class="add_key" @click="addKey()">添加一个按键</button>
       <button class="remove_key" @click="removeKey()">删除一个按键</button>
       <button class="clean_key" @click="cleanKey()">清空所有按键</button>
-      <button class="save_key" @click="saveKey()">保存设定</button>
+      <button class="save_key" :class="{'is_edit':isEdit}" @click="saveKey()">保存设定</button>
       <br>
       <button class="key_type" :class="{'curl':keyboardType === 21}" @click="setKeyBoardType(21, 'key104')">104键盘</button>
       <button class="key_type" :class="{'curl':keyboardType === 17}" @click="setKeyBoardType(17, 'key84')">84键盘</button>
@@ -90,14 +90,15 @@ export default {
     return {
       key: [],
       curlIndex: null,
-      keyboardType: 21,
       curlKey: {
         width: null,
         height: null,
         left: null,
         top: null,
         text: new Array(11)
-      }
+      },
+      keyboardType: 21,
+      isEdit: false
     }
   },
   created () {
@@ -186,6 +187,14 @@ export default {
     curlKey: {
       handler: function (val, oldVal) {
         this.key[this.curlIndex] = this.curlKey
+      },
+      deep: true
+    },
+    key: {
+      handler: function (val, oldVal) {
+        this.key[this.curlIndex] = this.curlKey
+        this.isEdit = JSON.stringify(this.key) === localStorage.getItem('key')
+        console.log(this.isEdit)
       },
       deep: true
     }
